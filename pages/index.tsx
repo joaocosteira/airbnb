@@ -39,7 +39,7 @@ const Home : NextPage<HomeProps> = ({ exploreData, cardsData }) => {
           />
       </Head>
 
-      <Header placeholder=''/>
+      <Header placeholder="Start Your Search" />
       <Banner/>
 
       <main className='max-w-7xl mx-auto px-8 sm:px-16'>
