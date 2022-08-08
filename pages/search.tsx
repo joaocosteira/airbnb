@@ -17,13 +17,22 @@ export type SearchResult = {
 
 }
 
+const isString = (text: unknown): text is string => {
+    return typeof text === 'string' || text instanceof String;
+};
 
 const Search = ({ searchResults } : { searchResults : SearchResult [] }) => {
 
     const router = useRouter();
     const { startDate, endDate, location, numberOfGuests } = router.query
-    const formatedStartDate = format(new Date(startDate),"dd MMMM yy")
-    const formatedEndDate = format(new Date(endDate),"dd MMMM yy")
+
+    var formatedStartDate=''
+    var formatedEndDate=''
+
+    if(isString(startDate) && isString(endDate) && Boolean(Date.parse((startDate))) && Boolean(Date.parse(endDate))){
+        formatedStartDate = format(new Date(startDate),"dd MMMM yy")
+        formatedEndDate = format(new Date(endDate),"dd MMMM yy")
+    }
     const range = `${formatedStartDate} - ${formatedEndDate}`
 
     return(
