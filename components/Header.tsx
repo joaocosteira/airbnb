@@ -14,8 +14,8 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRangePicker } from 'react-date-range';
 import { useRouter } from "next/router";
 
-const Header = ({ placeholder } : { placeholder : string }) => {
-
+const Header = (props) => {
+    const placeholder = props.placeholder
     const [searchInput, setSearchInput] = useState('');
     const [numberOfGuests, setNumberOfGuests] = useState(1);
     const [startDate, setStartDate] = useState(new Date());
