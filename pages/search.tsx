@@ -29,7 +29,7 @@ const Search = ({ searchResults } : { searchResults : SearchResult [] }) => {
     var formatedStartDate=''
     var formatedEndDate=''
 
-    if(isString(startDate) && isString(endDate) && Boolean(Date.parse((startDate))) && Boolean(Date.parse(endDate))){
+    if(startDate && endDate && isString(startDate) && isString(endDate) && Boolean(Date.parse((startDate))) && Boolean(Date.parse(endDate))){
         formatedStartDate = format(new Date(startDate),"dd MMMM yy")
         formatedEndDate = format(new Date(endDate),"dd MMMM yy")
     }
